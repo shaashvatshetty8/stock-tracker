@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda+SC:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Saira:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+.centerAdd{
+    
+
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    margin-left: 30px;
+}
+/*
+TOOK SOME INSPIRATION FROM: https://codepen.io/P1N2O/pen/pyBNzX
+
+*/
+body {
+    background-color: red;
+    display: flex;
+    font-family: "Saira",Arial, Helvetica, sans-serif;
+
+    font-size:50px;
+    background: linear-gradient(-45deg, #0082fb,#90bded, #7e6dfb, #c3b6f4, #ffffff);
+	background-size: 400% 400%;
+	animation: gradient 13s ease infinite;
+    justify-content: center;
+    transform: scalex(0.9);
+
+    
+
+    
+    
+
+}
+#watchlist{
+    font-size:30px;
+    color:black;
+    border-radius: 12px;
+    opacity: 0.3;
+    font-size: 40px;
+}
+
+input::placeholder{
+    opacity:0.5;
+};
+
+button.remove{
+   
+
+    font-size:60px;
+    border-radius: 12px;
+
+    
+}
+#home{
+   
+
+    font-size:30px;
+    color:black;
+    border-radius: 12px;
+    opacity: 0.3;
+    font-size: 40px;
+
+
+}
+.scaler{
+    transform:scale(0.8);
+}
+.curr_stock{
+    margin-top: 10px;
+    font-size:30px;
+}
+
+
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+.tile {
+    color:white;
+    display:block;
+    text-decoration: none;
+
+}
+.tile:visited{
+    color:white;
+}
+
+

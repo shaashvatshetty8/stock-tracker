@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<title>Watchlist</title>
+    <link rel = "stylesheet" href = "/styles.css"/>
+
+
+</head>
+
+<body>
+    
+
+   
+    <div class = "scaler">
+        <form action = "/" method = "get">
+            <button type = "submit" id = "home">Home</button>
+        </form>
+        <form action = "/add" method = "get">
+            <button type = "submit" id = "home">Add Stocks</button>
+        </form>
+        <h1>Your Stocks</h1>
+        <div id = "display"></div>
+    </div>
+
+    <!-- Used this to read about schema ids: https://www.geeksforgeeks.org/node-js/mongoose-schemas-ids/-->
+    <script>
+        const stocks = JSON.parse('<%-JSON.stringify(stocks)%>');
+
+        const d = document.getElementById("display");
+        if(stocks.length == 0){
+            let output = "<p>No stocks entered!</p>"
+            d.innerHTML = output;
+        }
+        else{
+            let output = "<table border = '1' id = 'output' >";
+            output +=`<tr>
+                <th>Symbol</th>
+                <th>Price</th>
+                <th>Open</th>
+                <th>High</th>
+                <th>Low</th>
+                <th>Volume</th>
+                <th>Latest</th>
+                <th>Change</th>
+                <th>Change Percent</th>
+                <th>Remove stock</th>
+                </tr>
+                `
+            for(const s of stocks){
+                output += `
+                        <tr>
+                        <td>${s.symbol}</td>
+                        <td>${s.price}</td>
+                        <td>${s.open}</td>
+                        <td>${s.high}</td>
+                        <td>${s.low}</td>
+                        <td>${s.volume}</td>
+                        <td>${s.latestTradingDay}</td>
+                        <td>${s.change}</td>
+                        <td>${s.changePercent}</td>
+                        <td>
+                        <form method = "post" action = "/delete/${s._id}">
+                            <button type = "submit" class = "remove">Remove</button>
+                        </form>
+
+                        </td>
+                        </tr>
+
+                `;
+            }
+            output += "</table>"
+            d.innerHTML = output;
+        }
+
+    </script>
+
+
+</body>
+</html>

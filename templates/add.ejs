@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<title>Adding Stock</title>
+    <link rel = "stylesheet" href = "/styles.css"/>
+</head>
+
+<body>
+
+    <form action = "/" method = "get">
+        <button type = "submit" id = "home">Home</button>
+        <br>
+        <br>
+    
+    </form>
+    <form action = "/watchlist" method = "get">
+        <button type = "submit" id = "watchlist">Watchlist</button>
+        <br>
+        <br>
+    </form>
+    
+    <div class ="centerAdd">
+    <form method = "post" action = "/add">
+        <input id = "symbol" name = "symbol" type = "text" placeholder = "AAPL,TSLA, AMZN..." required>
+        <button type = "submit" id = "submitButton">Add Stock</button>
+
+    </form>
+</div>
+
+
+
+   
+
+</body>
+
